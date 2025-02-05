@@ -1,6 +1,6 @@
-import pool from '../config/db.js';
+const pool =  require('../config/db.js');
 
-export const publishCampaign = async (req, res, next) => {
+const publishCampaign = async (req, res, next) => {
   const campaignData = req.body; // Assuming the payload is the entire JSON (without a top-level "campaign" key)
   const client = await pool.connect();
 
@@ -89,3 +89,5 @@ export const publishCampaign = async (req, res, next) => {
     client.release();
   }
 };
+
+module.exports = { publishCampaign };

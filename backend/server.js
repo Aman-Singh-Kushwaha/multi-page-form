@@ -8,6 +8,7 @@ const errorHandler = require('./middlewares/errorHandler');
 
 const authRoutes = require('./routes/auth.routes');
 const campaignRoutes = require('./routes/campaign.routes');
+const groupRoutes = require('./routes/group.routes');
 
 const app = express();
  
@@ -24,6 +25,8 @@ app.get("/", (req, res)=> res.send("API Running and Working at /api") )
 app.use('/api/auth', authRoutes);
 
 app.use('/api/campaign', campaignRoutes);
+
+app.use('/api/groups', groupRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
