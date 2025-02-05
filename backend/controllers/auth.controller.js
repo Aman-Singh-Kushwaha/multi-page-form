@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwtUtil = require('../utils/jwt');
 const pool = require('../config/db');
 
