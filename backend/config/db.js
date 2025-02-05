@@ -3,10 +3,9 @@ const fs = require('fs');
 require('dotenv').config();
 
 const pool = new Pool({
-  connectionString: process.env.POSTGRES_URL,
+  connectionString: process.env.NEON_DATABASE_URL,
   ssl: {
     rejectUnauthorized: false,
-    ca: fs.readFileSync('./prod-ca-2021.crt').toString()
   }
 });
 
